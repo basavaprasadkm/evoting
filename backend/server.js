@@ -88,6 +88,9 @@ mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("✅ MongoDB Connected Successfully");
+    app.get("/", (req, res) => {
+      res.send("E-Voting Backend is Running Successfully");
+    });
     app.listen(PORT, () => {
       console.log(`🚀 Server running on http://localhost:${PORT}`);
       console.log(`📊 Environment: ${process.env.NODE_ENV}`);
